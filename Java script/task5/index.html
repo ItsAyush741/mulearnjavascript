@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Details</title>
+<style>
+  body {
+    background-color: #FEE715;
+    color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  #container {
+    text-align: center;
+  }
+  #result {
+    margin-top: 20px;
+  }
+  .button{
+            width: 100%;
+            padding: 10px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+    }
+  
+</style>
+</head>
+<body>
+<div id="container">
+  <h2>Enter a name to get details:</h2>
+  <input type="text" id="nameInput" placeholder="Enter name"><br><br>
+  <button  class=button onclick="getDetails()">Details</button>
+  <div id="result"></div>
+</div>
+
+<script>
+  var data = [
+    {
+      "name": "ayush",
+      "age": 18,
+      "place": "soman mukku",
+      "dob": "2005-11-11"
+    },
+    {
+      "name": "anoop",
+      "age": 18,
+      "place": "metropolis",
+      "dob": "2005-11-11"
+    },
+    {
+      "name": "deepak",
+      "age": 18,
+      "place": "perumon",
+      "dob": "2005-11-11"
+    },
+  ];
+
+  function getDetails() {
+    var nameInput = document.getElementById("nameInput").value;
+    var resultDiv = document.getElementById("result");
+    var details = data.find(person => person.name.toLowerCase() === nameInput.toLowerCase());
+    
+    if (details) {
+      resultDiv.innerHTML = `
+        <h3>Details of ${details.name}:</h3>
+        <p>Age: ${details.age}</p>
+        <p>Place: ${details.place}</p>
+        <p>Date of Birth: ${details.dob}</p>
+      `;
+    } else {
+      resultDiv.innerHTML = "Person not found.";
+    }
+  }
+</script>
+</body>
+</html>

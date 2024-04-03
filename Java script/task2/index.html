@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .header{
+        text-align: center;
+    }
+    body{
+        background-color: #FEE715;
+    }
+    .container {
+            max-width: 400px;
+            margin: 100px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+    }
+    label{
+        font-weight: bold;
+    }
+    input[type="button"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+    .text{
+        text-align: center;
+    }
+
+    </style>
+</head>
+<body>
+        <div class="header">
+            <h1>Add two number using text box as input using javascript</h1>
+        </div>
+        <div class="container">
+            <div class="text">
+           <label class="text1">Enter First Number :</label> <br>
+            <input type="text" id="Text1" name="TextBox1">
+            <br>
+            <label class="text2">Enter Second Number :</label><br>
+            <input type="text" id="Text2" name="TextBox2">
+            <br>
+            <label>Result :</label> <br>
+            <input type="text" id="txtresult" name="TextBox3">
+            </div>
+            <br>
+         <input type="button" name="clickbtn" value="Display Result" onclick="add_number()">
+        </div>
+        <script type="text/javascript">
+            function add_number() {
+               var first_number = parseInt(document.getElementById("Text1").value);
+               var second_number = parseInt(document.getElementById("Text2").value);
+               var result = first_number + second_number;
+               document.getElementById("txtresult").value = result;
+            }
+        </script>
+</body>
+</html>
